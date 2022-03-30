@@ -1,4 +1,4 @@
-# String Client-Server gRPC
+# String Client-Server gRPC/Protocol Buffers
 
 - [Introdução](#Introdução)
 - [Dependencias](#Dependências)
