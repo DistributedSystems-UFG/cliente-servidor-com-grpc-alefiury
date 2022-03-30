@@ -7,7 +7,7 @@ from constCS import *
 
 
 def run():
-    channel = grpc.insecure_channel(HOST)
+    channel = grpc.insecure_channel(f"{HOST}:{PORT}")
     stub = strings_pb2_grpc.StringsOpsStub(channel)
     # Inputs
     first_string = input("Input your first string: ")
