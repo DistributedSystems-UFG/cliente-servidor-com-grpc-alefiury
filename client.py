@@ -23,7 +23,6 @@ def run():
         print(f"Levenshtein Distance: {response.message}")
     elif operation == 'Equal':
         response =  stub.Equal(strings_pb2.InString(str1=first_string, str2=second_string))
-        print(f"----------------{response.message}")
         if response.message:
             print("Strings are equal")
         else:
