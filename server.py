@@ -26,7 +26,7 @@ class StringOps(strings_pb2_grpc.StringsOpsServicer):
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     strings_pb2_grpc.add_StringsOpsServicer_to_server(StringOps(), server)
-    server.add_insecure_port(str(PORT))
+    server.add_insecure_port(f'[::]:{PORT}')
     server.start()
     server.wait_for_termination()
 
