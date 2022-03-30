@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+service StringsOps {
+    rpc ConcatStrings (InString) returns (OutString) {}
+    rpc LevenshteinDist (InString) returns (LevDist) {}
+    rpc Equal (InString) returns (Comp) {}
+  }
+
+message InString {
+    string str1 = 1;
+    string str2 = 2;
+}
+
+message OutString {
+    string strout = 1;
+}
+
+message LevDist {
+    int32 message = 1;
+}
+
+message Comp {
+    bool message = 1;
+}
