@@ -23,14 +23,14 @@ class StringOps(strings_pb2_grpc.StringsOpsServicer):
         return strings_pb2.Comp(message=True if request.str1==request.str2 else False)
 
 
-# def serve():
-#     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-#     strings_pb2_grpc.add_StringsOpsServicer_to_server(StringOps(), server)
-#     server.add_insecure_port(str(PORT))
-#     server.start()
-#     server.wait_for_termination()
+def serve():
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    strings_pb2_grpc.add_StringsOpsServicer_to_server(StringOps(), server)
+    server.add_insecure_port(str(PORT))
+    server.start()
+    server.wait_for_termination()
 
 
-# if __name__ == '__main__':
-#     logging.basicConfig()
-#     serve()
+if __name__ == '__main__':
+    logging.basicConfig()
+    serve()
